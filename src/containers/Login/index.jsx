@@ -35,8 +35,8 @@ export function Login() {
 
 	const onSubmit = async (data) => {
 		try {
-			const { response } = await api.post(
-				'/sessions',
+			const response = await api.post(
+				'/session',
 				{
 					email: data.email,
 					password: data.password,
@@ -48,6 +48,8 @@ export function Login() {
 
 			const token = response.data.token;
 			localStorage.setItem('token', token);
+
+			console.log('Resposta da API:', response);
 
 			// Pegando o status correto da resposta
 			if (response?.status === 200 || response?.status === 201) {

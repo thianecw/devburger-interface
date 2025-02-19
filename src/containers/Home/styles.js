@@ -15,8 +15,7 @@ background: linear-gradient(
   rgba(255,255,255,0.5)
 ), url(${Background2});
 height: 500px;
-
-
+background-size: cover;
 
 img {
   height: 100%;
