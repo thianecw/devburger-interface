@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+background-color: red;
+
 .carousel-item {
+    padding-left: 80px;
 }
 `;
 
@@ -28,8 +31,24 @@ margin-bottom: 40px;
 `;
 
 export const ContainerItems = styled.div`
+background: url('${(props) => props.imageUrl}'),no-repeat;
+background-position: center;
+background-size: cover;
 display: flex;
 align-items: center;
 padding: 20px 10px;
-background: url('${(props) => props.imageUrl}');
+height: 250px;
+width: 100%;
+border-radius: 20px;
+
+p {
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 30px;
+    padding: 10px 30px;
+    margin-top: 50px;
+}
 `;

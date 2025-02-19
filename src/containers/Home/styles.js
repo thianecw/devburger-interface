@@ -12,10 +12,8 @@ height: 480px;
 export const Container = styled.section`
 background: linear-gradient(
   rgba(255,255,255,0.5),
-  rgba(255,255,255,0.5)
-), url(${Background2});
-height: 500px;
-background-size: cover;
+  rgba(255,255,255,0.5)), url(${Background2}), no-repeat;
+
 
 img {
   height: 100%;
@@ -30,7 +28,7 @@ p {
 `;
 
 export const Content = styled.div`
-
+padding-bottom: 70px;
 `;
 
 export const Footer = styled.div`
