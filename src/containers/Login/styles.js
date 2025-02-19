@@ -1,27 +1,11 @@
 import styled from 'styled-components';
-import Background1 from '../../assets/bg-login.svg';
 import Background2 from '../../assets/bg-login2.svg';
+import { Link as ReactLink } from 'react-router-dom';
 
 export const Container = styled.div`
 display: flex;
 height: 100vh;
 width: 100vw;
-`;
-
-export const LeftContainer = styled.div`
-  background: url(${Background1});
-  background-size: cover;
-  background-position: center;
-  height: 100%;
-  width: 100%;
-  max-width: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  img {
-  width: 60%;
-  }
 `;
 
 export const RigthContainer = styled.div`
@@ -101,4 +85,11 @@ p {
   font-weight: 300;
   height: 10px;
 }
+
+`;
+
+export const Link = styled(ReactLink)`
+text-decoration: none;
+color: white;
+
 `;
