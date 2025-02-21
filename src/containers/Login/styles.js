@@ -25,7 +25,6 @@ flex-direction: column;
 font-family: "Poppins", serif;
 color: white;
 font-weight: 600;
-
   }
 
   a {
@@ -92,4 +91,8 @@ export const Link = styled(ReactLink)`
 text-decoration: none;
 color: white;
 
+`;
+
+export const Footer = styled.div`
+color: red;
 `;

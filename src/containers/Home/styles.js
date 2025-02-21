@@ -10,31 +10,9 @@ height: 480px;
 `;
 
 export const Container = styled.section`
-background: linear-gradient(
+ background: linear-gradient(
   rgba(255,255,255,0.5),
   rgba(255,255,255,0.5)), url(${Background2}), no-repeat;
-
-
-img {
-  height: 100%;
-  width: 100%;
-}
-
-p {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-`;
-
-export const Content = styled.div`
-padding-bottom: 70px;
-`;
-
-export const Footer = styled.div`
-background-color:#5C2669;
-color: white;
-font-size: 15px;
-padding: 10px 0 10px 0;
-text-align: center;
+  background-position: center;
+  background-size: cover;
 `;

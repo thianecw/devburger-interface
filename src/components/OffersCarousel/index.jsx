@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import { api } from '../../services/api';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { Container } from '../../containers/Home/styles';
-import { Title } from './styles';
+import { Container, Title } from './styles';
 import { CardProduct } from '../CardProduct';
+import { priceFormat } from '../../utils/priceFormat';
 
 export function OffersCarousel() {
 	const [offers, setOffers] = useState([]);
@@ -13,7 +13,12 @@ export function OffersCarousel() {
 		async function loadProducts() {
 			const { data } = await api.get('/products');
 
-			const onlyOffers = data.filter((product) => product.sale);
+			const onlyOffers = data
+				.filter((product) => product.sale)
+				.map((product) => ({
+					formatedPrice: priceFormat(product.price),
+					...product,
+				}));
 
 			setOffers(onlyOffers);
 		}
@@ -28,7 +33,7 @@ export function OffersCarousel() {
 		},
 		desktop: {
 			breakpoint: { max: 3000, min: 1280 },
-			items: 4,
+			items: 5,
 		},
 		tablet: {
 			breakpoint: { max: 1280, min: 690 },

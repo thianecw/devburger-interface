@@ -1,20 +1,20 @@
 import PropTypes from 'prop-types';
-import { Container, CardImage } from '../CardProduct/styles';
+import { CartButton } from '../CartButton';
+import { CardImage, Container } from './styles';
 
 export function CardProduct({ product }) {
-	console.log(product);
 	return (
 		<Container>
 			<CardImage src={product.url} alt={product.name} />
 			<div>
-				<p> {product.name}</p>
-				<strong> {product.price} </strong>
+				<p>{product.name}</p>
+				<strong> {product.formatedPrice}</strong>
 			</div>
-			{/* <CardButton></CardButton> */}
+			<CartButton />
 		</Container>
 	);
 }
 
 CardProduct.propTypes = {
-	product: PropTypes.object,
+	products: PropTypes.object,
 };

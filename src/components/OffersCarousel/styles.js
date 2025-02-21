@@ -1,65 +1,49 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-padding-left: 30px;
+    .carousel-item{
+        padding-right: 40px;
+    }
 
-.carousel-item {
-    padding-right: 40px;
+    overflow-x: hidden;
+
+    .react-multi-carousel-list{
+        overflow: visible;
+    }
+
+    padding-left:40px;
+    padding-bottom: 40px;
+
+ .react-multiple-carousel__arrow--left {
+    left: 15px;
+    top: 10px;
 }
-
-overflow-x: hidden;
-
-.react-multi-carousel-item {
-    overflow: visible;
+.react-multiple-carousel__arrow--right {
+    
+    top: 10px;
 }
-
-padding-left: 40px;
-
 
 `;
-
 export const Title = styled.h2`
-color: #61A120;
-text-transform: uppercase;
-font-size: 32px;
-line-height: 48px;
-text-align: center;
-padding-bottom: 12px;
-position: relative;
-margin: 70px 0; 
+    font-size:32px;
+    font-weight:800;
+    color:#61A120;
+    padding-bottom:12px;
+    text-align: center;
+    position: relative;
+    margin-bottom: 40px;
+    margin: 70px 0;
+    text-transform: uppercase;
+    
+    &::after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 56px;
+        height: 4px;
+        background-color: #61A120;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 
-&::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    width: 56px;
-    height: 4px;
-    background-color: #61A120;
-    left: 50%;
-    transform: translateX(-50%);
-}
 `;
-
-// export const ContainerItems = styled.div`
-// background: url('${(props) => props.imageUrl}'),no-repeat;
-// background-position: center;
-// background-size: cover;
-// display: flex;
-// align-items: center;
-// padding: 20px 10px;
-// height: 250px;
-// width: 100%;
-
-// border-radius: 20px;
-
-// p {
-//     color: white;
-//     font-weight: 700;
-//     font-size: 20px;
-//     text-align: center;
-//     background-color: rgba(0,0,0,0.5);
-//     border-radius: 30px;
-//     padding: 10px 30px;
-//     margin-top: 50px;
-// }
-// `;
