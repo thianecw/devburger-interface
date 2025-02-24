@@ -44,7 +44,7 @@ export function CategoriesCarousel() {
 
 			<Carousel
 				responsive={responsive}
-				infinite={true}
+				infinite={false}
 				partialVisbile={false}
 				itemClass="carousel-item"
 			>

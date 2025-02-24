@@ -5,6 +5,7 @@ import { api } from '../../services/api';
 import { toast } from 'react-toastify';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { LeftContainer } from '../../components/LeftContainer';
+import { useUser } from '../../hooks/UserContext';
 
 import Logo from '../../assets/logo.svg';
 import { Button } from '../../components/Button';
@@ -13,6 +14,7 @@ import { Container, Form, InputContainer, Link, RigthContainer, Title } from './
 //documentação react hook form//
 export function Login() {
 	const navigate = useNavigate();
+	const { putUserData } = useUser();
 	const schema = yup
 		.object({
 			email: yup.string().email('Digite um email válido').required('O email é obrigatório'),
@@ -46,34 +48,39 @@ export function Login() {
 				},
 			);
 
-			const token = response.data.token;
-			localStorage.setItem('token', token);
+			console.log('Resposta completa da API:', response.data);
 
-			console.log('Resposta da API:', response);
+			// Pegando os dados corretamente da resposta da API
+			const { id, name, email, admin, token } = response.data;
+			const userData = { id, name, email, admin, token };
 
-			// Pegando o status correto da resposta
-			if (response?.status === 200 || response?.status === 201) {
-				toast.success('Login efetuado com sucesso 👌');
-				setTimeout(() => {
-					navigate('/');
-				}, 2000);
-			} else if (response?.status === 401) {
-				toast.error('Email ou senha inválidos 😞');
+			if (!userData) {
+				console.error('Erro: userData indefinido');
+				toast.error('Erro ao recuperar dados do usuário.');
+				return;
+			}
+
+			// Salvando no contexto e no localStorage
+			putUserData(userData);
+
+			console.log('Dados salvos:', userData);
+
+			if (response.status === 200 || response.status === 201) {
+				toast.success('Login efetuado com sucesso 👌', {
+					autoClose: 1500, // A mensagem desaparecerá 1.5 segundos
+				});
+				setTimeout(() => navigate('/'), 2000); // Espera 2 segunds antes de redirecionar
 			} else {
-				throw new Error(); // Se for um status inesperado, cai no catch
+				toast.error('Email ou senha inválidos 😞', {
+					autoClose: 3000,
+				});
 			}
 		} catch (error) {
-			// Verificando se o erro tem uma resposta da API
-			if (error.response) {
-				if (error.response.status === 401) {
-					toast.error('Email ou senha inválidos 😞');
-				} else {
-					toast.error('Erro no sistema. Tente novamente mais tarde 😵');
-				}
-			} else {
-				console.error('Erro ao fazer login:', error);
-				toast.error('Erro inesperado. Tente novamente 🔌');
-			}
+			console.error('Erro ao fazer login:', error);
+			toast.error('Erro inesperado. Tente novamente 🔌'),
+				{
+					autoClose: 3000,
+				};
 		}
 	};
 

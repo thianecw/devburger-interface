@@ -51,7 +51,7 @@ export function OffersCarousel() {
 
 			<Carousel
 				responsive={responsive}
-				infinite={true}
+				infinite={false}
 				partialVisbile={false}
 				itemClass="carousel-item"
 			>

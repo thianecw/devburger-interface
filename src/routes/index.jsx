@@ -3,6 +3,7 @@ import { Login } from '../containers/Login';
 import { Register } from '../containers/Register';
 import { Home } from '../containers/Home';
 import { Menu } from '../containers/Menu';
+import { Cart } from '../containers/Cart';
 
 export const router = createBrowserRouter([
 	{
@@ -23,5 +24,9 @@ export const router = createBrowserRouter([
 	{
 		path: '/cardapio',
 		element: <Menu />,
+	},
+	{
+		path: '/carrinho',
+		element: <Cart />,
 	},
 ]);

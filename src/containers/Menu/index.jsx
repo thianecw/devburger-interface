@@ -12,6 +12,7 @@ import { api } from '../../services/api';
 import { priceFormat } from '../../utils/priceFormat';
 import { CardProduct } from '../../components/CardProduct';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { Header } from '../../components/Header';
 
 export function Menu() {
 	const [categories, setCategories] = useState([]);
@@ -31,43 +32,44 @@ export function Menu() {
 		return 0;
 	});
 
-	//pegando as categorias da API//
+	// Carregar categorias e produtos da API
 	useEffect(() => {
 		async function loadCategories() {
 			const { data } = await api.get('/categories');
-
 			setCategories(data);
+
+			const categoryId = +queryParams.get('categoria');
+			if (categoryId) {
+				setActiveCategory(categoryId); // Seleciona a categoria da URL
+			} else if (data.length > 0) {
+				setActiveCategory(data[0].id); // Se não houver categoria na URL, seleciona a primeira
+			}
 		}
-
-		//pegando os produtos da API//
-		//data vem da API com todos os produtos//
-
 		async function loadProducts() {
 			const { data } = await api.get('/products');
-
 			const allProducts = data.map((product) => ({
 				formatedPrice: priceFormat(product.price),
 				...product,
 			}));
-
 			setProducts(allProducts);
 		}
 
 		loadCategories();
 		loadProducts();
-	}, []);
+	}, [search]); // Carregar novamente caso a URL mude
 
 	useEffect(() => {
-		// Filtra os produtos pela categoria ativa
-		const newFilteredProducts = products.filter(
-			(product) => product.category_id === activeCategory,
-		);
-
-		setFilteredProducts(newFilteredProducts);
-	}, [products, activeCategory]);
+		if (activeCategory === 0) {
+			setFilteredProducts(products); // Se categoria 0 (todas), mostra todos os produtos
+		} else {
+			const filtered = products.filter((product) => product.category_id === activeCategory);
+			setFilteredProducts(filtered);
+		}
+	}, [activeCategory, products]); // Refiltra sempre que a categoria ou os produtos mudarem
 
 	return (
 		<main>
+			<Header> </Header>
 			<Banner>
 				<h1>
 					O melhor
