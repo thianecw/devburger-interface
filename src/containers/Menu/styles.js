@@ -59,7 +59,7 @@ display: flex;
 `;
 
 export const BackButton = styled.button`
-background-color: #6F3576;
+background-color: #9758A6;
 color: white;
 font-size: 18px;
 font-weight: 400;
@@ -69,6 +69,13 @@ height: 35px;
 width: 100px;
 border-radius: 10px;
 margin-bottom: 40px;
+transition: all 0.4 ease-in-out;
+
+
+&:hover {
+  background-color: #6F3576;
+    transition: 0.5s;
+}
 `;
 
 export const CategoryButton = styled(Link)`

@@ -31,7 +31,11 @@ export const CartProvider = ({ children }) => {
 	};
 
 	//LIMPAR CARRINHO//
-	const clearCart = () => {};
+	const clearCart = () => {
+		setCartProducts([]);
+
+		updateLocalStorage([]);
+	};
 
 	//DELETAR ITEM//
 	const deleteProduct = (productId) => {
@@ -82,7 +86,7 @@ export const CartProvider = ({ children }) => {
 		const clientCartData = localStorage.getItem('devburger:cartInfo');
 
 		if (clientCartData) {
-			setCartProducts(JSON.parse(setCartProducts));
+			setCartProducts(JSON.parse(clientCartData));
 		}
 	}, []);
 

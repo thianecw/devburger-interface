@@ -4,11 +4,10 @@ import * as yup from 'yup';
 import { api } from '../../services/api';
 import { toast } from 'react-toastify';
 import { Navigate, useNavigate } from 'react-router-dom';
-import { LeftContainer } from '../../components/LeftContainer';
+import { Button, LeftContainer } from '../../components';
 import { useUser } from '../../hooks/UserContext';
 
 import Logo from '../../assets/logo.svg';
-import { Button } from '../../components/Button';
 import { Container, Form, InputContainer, Link, RigthContainer, Title } from './styles';
 
 //documentação react hook form//

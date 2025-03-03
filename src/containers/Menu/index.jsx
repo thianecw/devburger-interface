@@ -120,7 +120,6 @@ export function Menu() {
 							});
 						}}
 					>
-						{' '}
 						&lt; Voltar
 					</BackButton>
 				</BackButtonContainer>
