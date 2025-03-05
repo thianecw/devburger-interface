@@ -24,7 +24,6 @@ export function Header() {
 	function logoutUser() {
 		logout(); // Limpa o estado de autenticação
 
-		// Adicionando um pequeno delay para garantir que o estado seja atualizado
 		setTimeout(() => {
 			navigate('/login'); // Navega para a página de login após o logout
 		}, 100); // Espera 100ms antes de navegar
