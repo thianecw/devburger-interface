@@ -8,13 +8,11 @@ border-radius: 20px;
 box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
 *{
-    font-family: "Lato", sans-serif;
+    font-family:${(props) => props.theme.latoFont}; 
 }
 `;
 
-export const Body = styled.tbody`
-
-`;
+export const Body = styled.tbody``;
 
 export const Header = styled.thead``;
 
@@ -24,8 +22,8 @@ export const Th = styled.th`
 padding: 16px;
 text-align: left;
 background-color:rgb(98, 98, 98);
-color: #ffff;
-border-bottom: 1px solid #cdcdcd;
+color: ${(props) => props.theme.white}f;
+border-bottom: 1px solid ${(props) => props.theme.ligthGray};
 font-weight: 500;
 font-size: 16px;
 

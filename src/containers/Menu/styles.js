@@ -18,12 +18,12 @@ background-color:rgb(65, 65, 65);
 
 
 h1 {
-font-family: "Road Rage", sans-serif;
+font-family: ${(props) => props.theme.latoFont}; 
 text-transform: uppercase;
 font-size: 80px;
 line-height: 70px;
 font-weight: 200;
-color: white;
+color: ${(props) => props.theme.white};
 position: absolute;
 right: 20%;
 top: 20%;
@@ -31,9 +31,9 @@ text-align: center;
 
 span {
 display: block;
-color: white;
+color: ${(props) => props.theme.white};
 font-size: 20px;
-font-family: "Poppins", serif;
+font-family:${(props) => props.theme.poppinsFont}; 
 font-weight: 200;
 }
 }
@@ -42,9 +42,7 @@ font-weight: 200;
 export const Container = styled.div`
 width: 100%;
 min-height: 100vh;
- background: linear-gradient(
-  rgba(255,255,255,0.5),
-  rgba(255,255,255,0.5)), url(${Background2}), no-repeat;
+background: ${(props) => props.theme.backgroundGradient}, url(${Background2}), no-repeat;
   background-size: cover;
   padding-top: 50px; 
   background-attachment: fixed;
@@ -59,8 +57,8 @@ display: flex;
 `;
 
 export const BackButton = styled.button`
-background-color: #9758A6;
-color: white;
+background-color: ${(props) => props.theme.purple};
+color: ${(props) => props.theme.white};
 font-size: 18px;
 font-weight: 400;
 text-decoration: none;

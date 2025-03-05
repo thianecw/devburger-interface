@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-background-color: #5C2669;
-color: #ffff;
+background-color: ${(props) => props.theme.secondDarkPurple};
+color: ${(props) => props.theme.white};
 width: 100vw;
 height: 50px;
 display: flex;

@@ -10,9 +10,8 @@ height: 480px;
 `;
 
 export const Container = styled.section`
- background: linear-gradient(
-  rgba(255,255,255,0.5),
-  rgba(255,255,255,0.5)), url(${Background2}), no-repeat;
+background: ${(props) => props.theme.backgroundGradient}, url(${Background2}), no-repeat;
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
 `;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
-    background-color: #1F1F1F;
+    background-color: ${(props) => props.theme.mainBlack};
     width: 100%;
     height: 72px;
     padding: 0 56px;
@@ -32,23 +32,22 @@ export const Navigation = styled.nav`
         
         hr {
         height: 24px;
-        background-color: #625e53;
+        background-color: ${(props) => props.theme.darkGray};
        }
     `;
 
 export const HeaderLink = styled(Link)`
     text-decoration: none;
-    color: #ffff;
+    color:  ${(props) => props.theme.white};
     font-size: 14px;
+    font-weight: 400;
     transition: color 300ms;
-    color:  ${(props) => (props.$isActive ? '#9758a6' : '#ffff')};
+    color:  ${(props) => (props.$isActive ? props.theme.purple : props.theme.white)};
 
 
     &:hover {
-        color: #9758a6;
-    }
-
-    
+        color: ${(props) => props.theme.purple};;
+    } 
     `;
 
 export const Options = styled.div`
@@ -65,12 +64,12 @@ export const Profile = styled.div`
     font-size: 14px;
 
     p {
-        color: #ffff;
+        color: ${(props) => props.theme.white};
     }
 
 
     span {
-        color: #9758a6;
+        color: ${(props) => props.theme.purple};
         font-weight: 600;
     }
     `;
@@ -79,8 +78,7 @@ export const LinkContainer = styled(Link)`
     display: flex;
     gap: 10px;
     text-decoration: none;
-    color: #ffff;
-    margin-top: 3px;
+    color: ${(props) => props.theme.white};    margin-top: 3px;
 
     button {
         background: none;

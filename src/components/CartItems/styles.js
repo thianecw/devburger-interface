@@ -19,16 +19,16 @@ button {
     width: 25px;
     height: 25px;
    
-    background-color: #9758a6;
-    color: #ffff;
+    background-color: ${(props) => props.theme.purple};
+    color: ${(props) => props.theme.white}f;
     border-radius: 4px;
     font-size: 18px;
     border: none;
     transition: all 0.4 ease-in-out;
 
     &:hover {
-        background-color: #6f3576;
-    }
+        background-color: ${(props) => props.theme.secondDarkPurple};
+        transition: 0.5s;    }
 }
 `;
 

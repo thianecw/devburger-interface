@@ -22,8 +22,8 @@ justify-content: center;
 flex-direction: column;
 
   p {
-font-family: "Poppins", serif;
-color: white;
+font-family:${(props) => props.theme.poppinsFont}; 
+color: ${(props) => props.theme.white};
 font-weight: 600;
 
   }
@@ -50,8 +50,8 @@ gap: 25px;
 padding: 20px;
 width: 100%;
 max-width: 50%;
-font-family: "Poppins", serif;
-color: white;
+font-family:${(props) => props.theme.poppinsFont}; 
+color: ${(props) => props.theme.white};
 `;
 
 export const InputContainer = styled.div`
@@ -84,6 +84,6 @@ p {
 
 export const Link = styled(ReactLink)`
 text-decoration: none;
-color: white;
+color: ${(props) => props.theme.white};
 
 `;

@@ -5,9 +5,7 @@ import Background2 from '../../assets/bg-login2.svg';
 export const Container = styled.div`
 width: 100%;
 min-height: 100%;
- background: linear-gradient(
-  rgba(255,255,255,0.5),
-  rgba(255,255,255,0.5)), url(${Background2}), no-repeat;
+background: ${(props) => props.theme.backgroundGradient} url(${Background2}), no-repeat;
   background-position: center;
   background-size: cover;
   min-height: 100vh;
@@ -32,7 +30,7 @@ export const Title = styled.h1`
 font-size:32px;
 font-weight: 700;
 padding-bottom: 12px;
-color: #61A120;
+color: ${(props) => props.theme.green};
 text-transform: uppercase;
 position: relative;
 text-align: center;
@@ -44,7 +42,7 @@ padding: 30px;
         bottom: 0;
         width: 56px;
         height: 4px;
-        background-color: #9758a6;
+        background-color: ${(props) => props.theme.purple};
         left: 50%;
         transform: translateX(-50%);
     }

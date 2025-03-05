@@ -22,8 +22,8 @@ justify-content: center;
 flex-direction: column;
 
   p {
-font-family: "Poppins", serif;
-color: white;
+font-family: ${(props) => props.theme.poppinsFont};
+color: ${(props) => props.theme.white};
 font-weight: 600;
   }
 
@@ -35,15 +35,16 @@ font-weight: 200;
   `;
 
 export const Title = styled.h2`
-color: white;
-font-family: "Road Rage", serif;
+color: ${(props) => props.theme.white};
+font-family: ${(props) => props.theme.roadRageFont};
 font-size: 40px;
 font-weight: 300;
 line-height: 40px;
 
 span {
-    color: #9758A6;
-    font-family: "Road Rage", serif;
+    color: ${(props) => props.theme.purple};
+    font-family: ${(props) => props.theme.roadRageFont};
+
 }
 `;
 
@@ -54,8 +55,8 @@ gap: 40px;
 padding: 20px;
 width: 100%;
 max-width: 40%;
-font-family: "Poppins", serif;
-color: white;
+font-family: ${(props) => props.theme.poppinsFont};
+color: ${(props) => props.theme.white};
 `;
 
 export const InputContainer = styled.div`
@@ -89,10 +90,10 @@ p {
 
 export const Link = styled(ReactLink)`
 text-decoration: none;
-color: white;
+color: ${(props) => props.theme.white};
 
 `;
 
 export const Footer = styled.div`
-color: red;
+${(props) => props.theme.darkRed};
 `;

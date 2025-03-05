@@ -8,7 +8,7 @@ background-color: rgb(240, 238, 238);
 margin-bottom: 20px;
 
 *{
-    font-family: "Lato", sans-serif;
+    font-family:${(props) => props.theme.latoFont}; 
 }
 
 .container-top {
@@ -26,8 +26,8 @@ margin-bottom: 20px;
         margin-bottom: 20px;
         font-weight: bold;
         text-align: center;
-        background-color: rgb(98, 98, 98);
-        color: #fff;
+        background-color: ${(props) => props.theme.secondLigthGray};
+        color: ${(props) => props.theme.white};
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
     }
@@ -35,7 +35,7 @@ margin-bottom: 20px;
     .items {
         grid-area: items;
         font-weight: 400;
-        font-family: "Lato", sans-serif;
+        font-family:${(props) => props.theme.latoFont}; 
         padding-left: 20px;
         margin-left: 15px;
     }
