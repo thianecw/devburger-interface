@@ -26,7 +26,7 @@ margin-bottom: 20px;
         margin-bottom: 20px;
         font-weight: bold;
         text-align: center;
-        background-color: ${(props) => props.theme.secondLigthGray};
+        background-color:  rgb(98, 98, 98);
         color: ${(props) => props.theme.white};
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;

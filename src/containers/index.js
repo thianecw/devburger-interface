@@ -5,3 +5,7 @@ export * from './Menu';
 export * from './Register';
 export * from './Checkout';
 export * from './CompletePage';
+export * from './Admin/EditProduct';
+export * from './Admin/NewProduct';
+export * from './Admin/AllOrders';
+export * from './Admin/AllProducts';

@@ -5,7 +5,6 @@ import { useUser } from '../../hooks/UserContext';
 export function Home() {
 	return (
 		<main>
-			<Header> </Header>
 			<Banner></Banner>
 			<Container>
 				<div>

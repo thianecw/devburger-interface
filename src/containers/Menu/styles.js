@@ -16,12 +16,11 @@ background-size: cover;
 background-position: center;
 background-color:rgb(65, 65, 65);
 
-
 h1 {
-font-family: ${(props) => props.theme.latoFont}; 
+font-family: ${(props) => props.theme.roadRageFont}; 
 text-transform: uppercase;
-font-size: 80px;
-line-height: 70px;
+font-size: 100px;
+line-height: 80px;
 font-weight: 200;
 color: ${(props) => props.theme.white};
 position: absolute;

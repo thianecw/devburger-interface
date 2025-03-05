@@ -7,8 +7,7 @@ border-radius: 5px;
 border: none;
 background-color: ${(props) => props.theme.purple};
 color: ${(props) => props.theme.white};
-font-size: 30px;
-font-family: ${(props) => props.theme.latoFont}; 
+font-size: 20px;
 
 &:hover {
     background-color: ${(props) => props.theme.secondDarkPurple};;

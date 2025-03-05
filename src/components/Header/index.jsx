@@ -13,15 +13,21 @@ import {
 
 import { Link as RouterLink } from 'react-router-dom';
 import { Basket, User, SignOut } from '@phosphor-icons/react';
+import { Navigate } from 'react-router-dom';
 
 export function Header() {
 	const navigate = useNavigate();
 	const { logout, userInfo } = useUser();
 	const { pathname } = useResolvedPath();
 
+	// Função de logout
 	function logoutUser() {
-		logout();
-		navigate('/login');
+		logout(); // Limpa o estado de autenticação
+
+		// Adicionando um pequeno delay para garantir que o estado seja atualizado
+		setTimeout(() => {
+			navigate('/login'); // Navega para a página de login após o logout
+		}, 100); // Espera 100ms antes de navegar
 	}
 
 	return (

@@ -12,7 +12,6 @@ import { api } from '../../services/api';
 import { priceFormat } from '../../utils/priceFormat';
 import { CardProduct } from '../../components/CardProduct';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Header } from '../../components/Header';
 
 export function Menu() {
 	const [categories, setCategories] = useState([]);
@@ -69,7 +68,6 @@ export function Menu() {
 
 	return (
 		<main>
-			<Header> </Header>
 			<Banner>
 				<h1>
 					O melhor

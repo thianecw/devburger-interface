@@ -12,6 +12,7 @@ export const standardTheme = {
 	red: '#ff3205',
 	darkRed: '#cf3057',
 	white: '#fff',
+	secondWhite: '#f0f0f0',
 	gren: '#61a120',
 	backgroundGradient: `linear-gradient(
         rgba(255, 255, 255, 0.5),

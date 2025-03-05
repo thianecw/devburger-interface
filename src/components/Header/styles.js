@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
-    background-color: ${(props) => props.theme.mainBlack};
+    background-color: rgba(17, 17, 17, 0.88);
     width: 100%;
     height: 72px;
     padding: 0 56px;
@@ -32,7 +32,7 @@ export const Navigation = styled.nav`
         
         hr {
         height: 24px;
-        background-color: ${(props) => props.theme.darkGray};
+        color: ${(props) => props.theme.white};
        }
     `;
 
@@ -67,7 +67,6 @@ export const Profile = styled.div`
         color: ${(props) => props.theme.white};
     }
 
-
     span {
         color: ${(props) => props.theme.purple};
         font-weight: 600;
@@ -78,7 +77,8 @@ export const LinkContainer = styled(Link)`
     display: flex;
     gap: 10px;
     text-decoration: none;
-    color: ${(props) => props.theme.white};    margin-top: 3px;
+    color: ${(props) => props.theme.white};   
+    margin-top: 3px;
 
     button {
         background: none;

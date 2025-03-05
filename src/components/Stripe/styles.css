@@ -151,7 +151,7 @@
 	border-radius: 50%;
 }
 
-a {
+#view-details {
 	text-decoration: none;
 	font-size: 16px;
 	font-weight: 600;
@@ -210,7 +210,7 @@ td {
 	text-decoration: none;
 }
 
-h2 {
+#status-text {
 	margin: 0;
 	color: #30313d;
 	text-align: center;

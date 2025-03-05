@@ -62,24 +62,28 @@ export function Login() {
 			// Salvando no contexto e no localStorage
 			putUserData(userData);
 
-			console.log('Dados salvos:', userData);
-
 			if (response.status === 200 || response.status === 201) {
 				toast.success('Login efetuado com sucesso 👌', {
-					autoClose: 1500, // A mensagem desaparecerá 1.5 segundos
+					autoClose: 1500,
 				});
-				setTimeout(() => navigate('/'), 2000); // Espera 2 segunds antes de redirecionar
+
+				setTimeout(() => {
+					if (userData?.admin) {
+						navigate('/admin/pedidos');
+					} else {
+						navigate('/');
+					}
+				}, 1500); // Espera 2 segundos antes de redirecionar
 			} else {
 				toast.error('Email ou senha inválidos 😞', {
-					autoClose: 3000,
+					autoClose: 2000,
 				});
 			}
 		} catch (error) {
 			console.error('Erro ao fazer login:', error);
-			toast.error('Erro inesperado. Tente novamente 🔌'),
-				{
-					autoClose: 3000,
-				};
+			toast.error('Erro inesperado. Tente novamente 🔌', {
+				autoClose: 2000,
+			});
 		}
 	};
 
