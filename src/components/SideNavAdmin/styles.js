@@ -4,33 +4,47 @@ import { Link } from 'react-router-dom';
 export const Container = styled.nav`
 display: flex;
 flex-direction: column;
+width: 100%;
+height: 100vh;
+background-color: ${(props) => props.theme.secondBlack};
+align-items: center;
 
 img {
-    display: flex;
-    margin-top: 100px;
-     width: 200px;
+    margin-top: 50px;
+     width: 150px;
     }
 
-p {
-     color: ${(props) => props.theme.secondWhite};
-     font-size: 22px;
-     gap: 50px;
-     font-weight: 300;
-     margin-left: 20px;
- }`;
+    h1 {
+        color: ${(props) => props.theme.purple};
+        font-weight: 600;
+        font-family:${(props) => props.theme.latoFont}; 
+    }
+`;
 
-export const NavLinkContainer = styled.div``;
-export const FooterNavLink = styled.div``;
-
-export const Footer = styled.div``;
+export const NavLinkContainer = styled.div`
+display: flex;
+flex-direction: column;
+width: 100%;
+margin-top: 20px;
+`;
 
 export const NavLink = styled(Link)`
  display: flex;
- flex-direction: column;
   color: ${(props) => props.theme.secondWhite};
-     font-size: 20px;
-     font-weight: 300;
-     margin-left: 20px;
-     text-decoration: none;
-     padding: 10px
+  gap: 12px;
+  padding: 12px 10px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 300;
+  margin-left: 20px;
+  background-color: ${({ $isActive, theme }) => ($isActive ? theme.purple : 'transparent')};
+
+  &:hover{
+    background-color: ${(props) => props.theme.purple};
+  }
      `;
+
+export const Footer = styled.footer`
+width: 100%;
+margin-top: auto;
+`;

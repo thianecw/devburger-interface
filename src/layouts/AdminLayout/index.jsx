@@ -4,7 +4,6 @@ import { Container } from './styles';
 
 export function AdminLayout() {
 	const { admin: isAdmin } = JSON.parse(localStorage.getItem('devburger:userData'));
-	console.log('UserLayout está sendo renderizado');
 
 	return isAdmin ? (
 		<Container>

@@ -26,7 +26,7 @@ export function Header() {
 
 		setTimeout(() => {
 			navigate('/login'); // Navega para a página de login após o logout
-		}, 100); // Espera 100ms antes de navegar
+		}, 50); // Espera 100ms antes de navegar
 	}
 
 	return (

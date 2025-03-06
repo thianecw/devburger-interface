@@ -53,7 +53,7 @@ export const ContainerItems = styled.div`
 `;
 
 export const CategoryButton = styled(Link)`
- color:white;
+ color: ${(props) => props.theme.white};
         background: rgba(0,0,0,0.5);
         padding: 10px 30px;
         border-radius: 50px;
