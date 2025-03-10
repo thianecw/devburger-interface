@@ -28,7 +28,14 @@ button {
 
     &:hover {
         background-color: ${(props) => props.theme.secondDarkPurple};
-        transition: 0.5s;    }
+        transition: 0.5s;   
+    }
+
+    &:active {
+    transform: scale(0.90);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    animation: ease-in-out;
+   }
 }
 `;
 
@@ -42,7 +49,11 @@ export const TotalPrice = styled.p`
 font-weight: bold;
 `;
 
-export const Trash = styled.img`
+export const Trash = styled.image`
 cursor: pointer;
 width: 200px;
+&:hover {
+ transform: scale(1.1) translateZ(10px);
+}
+
 `;

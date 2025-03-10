@@ -2,9 +2,9 @@ import Logo from '../../assets/logo.svg';
 import BgCart from '../../assets/bg-cart.svg';
 import { Banner, Container, Content, Title } from './styles';
 import { CartItems } from '../../components/CartItems';
-import { BackButton, BackButtonContainer } from '../Menu/styles';
 import { useNavigate } from 'react-router-dom';
 import { CartResume } from '../../components/CartResume';
+import { BackButton } from '../../components/BackButton';
 
 export function Cart() {
 	const navigate = useNavigate();
@@ -20,17 +20,15 @@ export function Cart() {
 				<CartResume />
 			</Content>
 
-			<BackButtonContainer>
-				<BackButton
-					onClick={() => {
-						navigate({
-							pathname: '/cardapio',
-						});
-					}}
-				>
-					&lt; Voltar
-				</BackButton>
-			</BackButtonContainer>
+			<BackButton
+				onClick={() => {
+					navigate({
+						pathname: '/cardapio',
+					});
+				}}
+			>
+				&lt; Voltar
+			</BackButton>
 		</Container>
 	);
 }

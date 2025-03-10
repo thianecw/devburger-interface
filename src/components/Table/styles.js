@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Root = styled.table`
 width: 100%;
+height: 50px;
 border-collapse: collapse;
 background-color: rgb(240, 238, 238);
 border-radius: 20px;
@@ -26,7 +27,6 @@ color: ${(props) => props.theme.white}f;
 border-bottom: 1px solid ${(props) => props.theme.ligthGray};
 font-weight: 500;
 font-size: 16px;
-
 
 &:last-child {
     border-top-right-radius: 20px;

@@ -1,17 +1,10 @@
 import { useEffect, useState } from 'react';
-import {
-	Banner,
-	BackButton,
-	BackButtonContainer,
-	CategoryButton,
-	Container,
-	MenuCategories,
-	ProductsContainer,
-} from './styles';
+import { Banner, CategoryButton, Container, MenuCategories, ProductsContainer } from './styles';
 import { api } from '../../services/api';
 import { priceFormat } from '../../utils/priceFormat';
 import { CardProduct } from '../../components/CardProduct';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { BackButton } from '../../components/BackButton';
 
 export function Menu() {
 	const [categories, setCategories] = useState([]);
@@ -110,17 +103,15 @@ export function Menu() {
 					))}
 				</ProductsContainer>
 
-				<BackButtonContainer>
-					<BackButton
-						onClick={() => {
-							navigate({
-								pathname: '/',
-							});
-						}}
-					>
-						&lt; Voltar
-					</BackButton>
-				</BackButtonContainer>
+				<BackButton
+					onClick={() => {
+						navigate({
+							pathname: '/',
+						});
+					}}
+				>
+					&lt; Voltar
+				</BackButton>
 			</Container>
 		</main>
 	);

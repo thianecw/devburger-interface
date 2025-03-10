@@ -1,4 +1,3 @@
-import { Button } from '../Button';
 import { Container } from './styles';
 import { toast } from 'react-toastify';
 import { useEffect, useState } from 'react';
@@ -6,6 +5,7 @@ import { useCart } from '../../hooks/CartContext';
 import { api } from '../../services/api';
 import { priceFormat } from '../../utils/priceFormat';
 import { useNavigate } from 'react-router-dom';
+import { Button } from '../Button';
 
 export function CartResume() {
 	const [finalPrice, setFinalPrice] = useState(0);
@@ -64,6 +64,7 @@ export function CartResume() {
 					<p className="totalprice">{priceFormat(finalPrice + deliveryTax)}</p>
 				</div>
 			</Container>
+
 			<Button onClick={submitOrder} style={{ fontFamily: 'Poppins, sans-serif', fontSize: '18px' }}>
 				Finalizar pedido
 			</Button>

@@ -42,7 +42,7 @@ padding: 30px;
         bottom: 0;
         width: 56px;
         height: 4px;
-        background-color: ${(props) => props.theme.purple};
+        background-color: ${(props) => props.theme.green};
         left: 50%;
         transform: translateX(-50%);
     }

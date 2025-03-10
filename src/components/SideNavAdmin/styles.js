@@ -15,9 +15,10 @@ img {
     }
 
     h1 {
-        color: ${(props) => props.theme.purple};
-        font-weight: 600;
-        font-family:${(props) => props.theme.latoFont}; 
+        color: ${(props) => props.theme.secondWhite};
+        font-weight: 500;
+        font-family:${(props) => props.theme.latoFont};
+        margin-bottom: 20px;
     }
 `;
 

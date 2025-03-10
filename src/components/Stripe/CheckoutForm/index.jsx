@@ -5,6 +5,7 @@ import '../styles.css';
 import { api } from '../../../services/api';
 import { useCart } from '../../../hooks/CartContext';
 import { toast } from 'react-toastify';
+import { BackButton } from '../../BackButton'; // Caminho correto
 
 export default function CheckoutForm() {
 	const { cartProducts, clearCart } = useCart();
@@ -81,6 +82,7 @@ export default function CheckoutForm() {
 
 	return (
 		<div className="container">
+			<h1 className="title-checkout"> Pagamento </h1>
 			<form id="payment-form" onSubmit={handleSubmit}>
 				<PaymentElement id="payment-element" options={paymentElementOptions} />
 				<button className="button" disabled={isLoading || !stripe || !elements} id="submit">
@@ -90,6 +92,15 @@ export default function CheckoutForm() {
 				</button>
 				{message && <div id="payment-message">{message}</div>}
 			</form>
+			<BackButton
+				onClick={() => {
+					navigate({
+						pathname: '/carrinho',
+					});
+				}}
+			>
+				&lt; Voltar
+			</BackButton>
 		</div>
 	);
 }

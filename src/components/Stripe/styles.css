@@ -15,6 +15,30 @@
 	justify-content: center;
 	align-items: center;
 	min-height: 80vh;
+	height: 85vh;
+	width: 100vw;
+}
+
+.title-checkout {
+	font-size: 32px;
+	font-weight: 800;
+	color: #61a120;
+	padding-bottom: 12px;
+	text-align: center;
+	position: relative;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		width: 56px;
+		height: 4px;
+		background-color: #61a120;
+		left: 50%;
+		transform: translateX(-50%);
+	}
 }
 
 #payment-form {
