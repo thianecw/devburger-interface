@@ -1,7 +1,7 @@
 import { Table } from '../index';
 import { useCart } from '../../hooks/CartContext';
 import { priceFormat } from '../../utils/priceFormat';
-import { ButtonGroup, EmptyCart, ProductImg, TotalPrice } from './styles';
+import { ButtonGroup, EmptyCart, ProductImg, TotalPrice, TrashButton } from './styles';
 import { Trash } from '@phosphor-icons/react';
 
 export function CartItems() {
@@ -40,11 +40,13 @@ export function CartItems() {
 								<TotalPrice>{priceFormat(product.price * product.quantity)}</TotalPrice>
 							</Table.Td>
 							<Table.Td>
-								<Trash
-									size={32}
-									onClick={() => deleteProduct(product.id)}
-									style={{ cursor: 'pointer' }}
-								/>
+								<TrashButton>
+									<Trash
+										size={32}
+										onClick={() => deleteProduct(product.id)}
+										style={{ cursor: 'pointer' }}
+									/>
+								</TrashButton>
 							</Table.Td>
 						</Table.Tr>
 					))

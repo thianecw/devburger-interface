@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ProductImg = styled.img`
-height: 70px;
+height: 50px;
 width: 80px;
 border-radius: 20px;
 `;
@@ -49,9 +49,12 @@ export const TotalPrice = styled.p`
 font-weight: bold;
 `;
 
-export const Trash = styled.image`
+export const TrashButton = styled.image`
 cursor: pointer;
-width: 200px;
+width: 30px;
+display: flex;
+margin: 0 auto;
+
 &:hover {
  transform: scale(1.1) translateZ(10px);
 }

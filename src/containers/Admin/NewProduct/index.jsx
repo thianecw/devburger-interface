@@ -34,9 +34,14 @@ const schema = yup.object({
 		.test('fileSize', 'Anexe uma imagem até 5mb', (value) => {
 			return value && value.length > 0 && value[0].size <= 50000;
 		})
-		.test('Formato inválido. Anexe uma imagem formato PNG ou JPEG', (value) => {
-			return value && value.length > 0 && (value[0].type === 'image/jpeg' || 'image/png');
+		.test('fileFormat', 'Formato inválido. Anexe uma imagem no formato PNG ou JPEG', (value) => {
+			return (
+				value &&
+				value.length > 0 &&
+				(value[0].type === 'image/jpeg' || value[0].type === 'image/png')
+			);
 		}),
+
 	offer: yup.boolean(),
 });
 
@@ -64,21 +69,26 @@ export function NewProduct() {
 	const onSubmit = async (data) => {
 		const productFormData = new FormData();
 
-		// Verifique os dados antes de enviá-los
 		console.log(data);
 
 		productFormData.append('name', data.name);
 		productFormData.append('price', data.price * 100);
-		productFormData.append('category_id', Number(data.category)); // Convertendo para número
-		productFormData.append('file', data.file[0]); // Enviando o arquivo
+		productFormData.append('category_id', Number(data.category));
+		productFormData.append('file', data.file[0]);
 		productFormData.append('offer', data.offer);
 
 		try {
-			await toast.promise(api.post('/products', productFormData), {
-				pending: 'Cadastrando novo produto...',
-				success: 'Produto cadastrado com sucesso',
-				error: 'Falha ao cadastrar o produto. Tente novamente!',
-			});
+			await toast.promise(
+				api.post('/products', productFormData),
+				{
+					pending: 'Cadastrando novo produto... ⏳',
+					success: 'Produto cadastrado com sucesso! 🎉',
+					error: 'Falha ao cadastrar o produto. Tente novamente! ❌',
+				},
+				{
+					autoClose: 1500,
+				},
+			);
 		} catch (error) {
 			console.error(error);
 		}
@@ -86,6 +96,7 @@ export function NewProduct() {
 
 	return (
 		<Container>
+			<p> Cadastrar novo produto </p>
 			<Form onSubmit={handleSubmit(onSubmit)}>
 				<InputGroup>
 					<Label> Nome </Label>
@@ -139,7 +150,7 @@ export function NewProduct() {
 
 				<InputCheckBox>
 					<Label>
-						<input type="checkbox" {...register('offer')} /> <Label> Produto em oferta</Label>
+						<input type="checkbox" {...register('offer')} /> Produto em oferta
 					</Label>
 				</InputCheckBox>
 

@@ -90,13 +90,14 @@ export function AllOrders() {
 				<Table aria-label="collapsible table">
 					<TableHead>
 						<TableRow>
-							<TableCell />
+							<TableCell sx={{ backgroundColor: '#363636' }}></TableCell>
 							<TableCell
 								sx={{
 									fontWeight: 600,
-									color: '#9758a6',
 									fontSize: '16px',
 									fontFamily: '"Poppins", sans-serif',
+									backgroundColor: '#363636',
+									color: 'white',
 								}}
 							>
 								Pedido
@@ -104,9 +105,10 @@ export function AllOrders() {
 							<TableCell
 								sx={{
 									fontWeight: 600,
-									color: '#9758a6',
 									fontSize: '16px',
 									fontFamily: '"Poppins", sans-serif',
+									backgroundColor: '#363636',
+									color: 'white',
 								}}
 							>
 								Cliente
@@ -114,9 +116,10 @@ export function AllOrders() {
 							<TableCell
 								sx={{
 									fontWeight: 600,
-									color: '#9758a6',
 									fontSize: '16px',
 									fontFamily: '"Poppins", sans-serif',
+									backgroundColor: '#363636',
+									color: 'white',
 								}}
 							>
 								Data do pedido
@@ -124,9 +127,10 @@ export function AllOrders() {
 							<TableCell
 								sx={{
 									fontWeight: 600,
-									color: '#9758a6',
 									fontSize: '16px',
 									fontFamily: '"Poppins", sans-serif',
+									backgroundColor: '#363636',
+									color: 'white',
 								}}
 							>
 								Status

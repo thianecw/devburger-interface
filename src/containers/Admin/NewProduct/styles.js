@@ -4,9 +4,17 @@ import { Button } from '../../../components';
 
 export const Container = styled.div`
 display: flex;
+flex-direction: column;
 justify-content: center;
 align-items: center;
 height: 90vh;
+
+p {
+    color: ${(props) => props.theme.purple};
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
 `;
 
 export const Form = styled.form`
