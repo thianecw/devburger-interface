@@ -14,7 +14,6 @@ p {
     font-weight: 600;
     font-size: 20px;
     margin-bottom: 20px;
-    
 }
 `;
 

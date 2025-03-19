@@ -79,16 +79,11 @@ export function Menu() {
 							key={category.id}
 							$isActive={category.id === activeCategory}
 							onClick={() => {
-								navigate(
-									{
-										pathname: '/cardapio',
-										search: `?categoria=${category.id}`,
-									},
-									{
-										replace: true,
-									},
-								);
-
+								console.log(`Navigating to /cardapio?categoria=${category.id}`); // Verifique o valor da URL
+								navigate({
+									pathname: '/cardapio',
+									search: `?categoria=${category.id}`,
+								});
 								setActiveCategory(category.id);
 							}}
 						>

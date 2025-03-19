@@ -16,7 +16,7 @@ export function SideNavAdmin() {
 	return (
 		<Container>
 			<img src={Logo} alt="logo" />
-			<h1> Gerenciamento </h1>
+			<h1> GERENCIAMENTO </h1>
 			<NavLinkContainer>
 				{navLinks.map((link) => (
 					<NavLink key={link.id} to={link.path} $isActive={pathname === link.path}>

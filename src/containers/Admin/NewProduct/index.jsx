@@ -1,6 +1,7 @@
 import { Controller, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { useNavigate } from 'react-router-dom';
 import {
 	Container,
 	Form,
@@ -48,6 +49,7 @@ const schema = yup.object({
 export function NewProduct() {
 	const [fileName, setFileName] = useState(null);
 	const [categories, setCategories] = useState([0]);
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		async function loadCategories() {
@@ -75,7 +77,7 @@ export function NewProduct() {
 		productFormData.append('price', data.price * 100);
 		productFormData.append('category_id', Number(data.category));
 		productFormData.append('file', data.file[0]);
-		productFormData.append('offer', data.offer);
+		productFormData.append('sale', data.sale);
 
 		try {
 			await toast.promise(
@@ -92,11 +94,14 @@ export function NewProduct() {
 		} catch (error) {
 			console.error(error);
 		}
+		setTimeout(() => {
+			navigate('/admin/produtos');
+		}, 2000);
 	};
 
 	return (
 		<Container>
-			<p> Cadastrar novo produto </p>
+			<p> CADASTRAR NOVO PRODUTO </p>
 			<Form onSubmit={handleSubmit(onSubmit)}>
 				<InputGroup>
 					<Label> Nome </Label>
@@ -150,7 +155,7 @@ export function NewProduct() {
 
 				<InputCheckBox>
 					<Label>
-						<input type="checkbox" {...register('offer')} /> Produto em oferta
+						<input type="checkbox" {...register('sale')} /> Produto em oferta
 					</Label>
 				</InputCheckBox>
 

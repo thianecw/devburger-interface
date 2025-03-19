@@ -35,9 +35,9 @@ export function CartResume() {
 				state: data,
 			});
 		} catch (err) {
-			toast.error('Ops, algo deu errado. Tente novamente', {
+			toast.error('Ops, algo deu errado. Tente novamente ⚠️', {
 				position: 'top-right',
-				autoClose: 2000,
+				autoClose: 1500,
 				hideProgressBar: false,
 				closeOnClick: false,
 				pauseOnHover: true,

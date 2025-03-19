@@ -53,10 +53,9 @@ export function CategoriesCarousel() {
 						<ContainerItems key={category.id} imageUrl={category.url}>
 							<CategoryButton
 								onClick={() => {
-									navigate({
-										pathname: '/cardapio',
-										search: `?categoria=${category.id}`,
-									});
+									const url = `/cardapio?categoria=${category.id}`;
+									console.log(`Navigating to ${url}`); // Verifique a URL no console
+									window.location.href = url; // Força a navegação
 								}}
 							>
 								{category.name}
