@@ -68,7 +68,7 @@ export function Menu() {
 					hamburger
 					<br />
 					está aqui
-					<span> Esse cardápio está irrestível!</span>
+					<span> Esse cardápio está irresistível!</span>
 				</h1>
 			</Banner>
 
